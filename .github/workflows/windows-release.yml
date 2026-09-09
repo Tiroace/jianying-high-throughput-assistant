@@ -1,0 +1,50 @@
+name: Windows build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Build portable Windows package
+        shell: pwsh
+        run: |
+          pyinstaller --noconfirm --clean --distpath dist --workpath build packaging/assistant.spec
+          Copy-Item packaging/使用说明.txt dist/剪映高产剪辑助手/使用说明.txt
+          Copy-Item LICENSE dist/剪映高产剪辑助手/LICENSE.txt
+          @("素材库", "文案", "任务", "日志") | ForEach-Object {
+            New-Item -ItemType Directory -Force -Path (Join-Path "dist/剪映高产剪辑助手" $_) | Out-Null
+          }
+          Compress-Archive -Path dist/剪映高产剪辑助手 -DestinationPath dist/剪映高产剪辑助手_Windows_x64.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: 剪映高产剪辑助手-Windows-x64
+          path: dist/剪映高产剪辑助手_Windows_x64.zip
+          if-no-files-found: error
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${{ github.ref_name }}" dist/剪映高产剪辑助手_Windows_x64.zip --generate-notes --title "${{ github.ref_name }}"

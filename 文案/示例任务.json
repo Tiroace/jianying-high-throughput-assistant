@@ -1,0 +1,45 @@
+{
+  "project_name": "黄精内容测试",
+  "resolution": [1080, 1920],
+  "fps": 30,
+  "max_variants": 4,
+  "subtitle_size": 10,
+  "hooks": [
+    {
+      "text": "很多人挑滋补产品，只看价格，却忽略了原料信息。",
+      "duration": 3.5,
+      "keywords": ["人物", "家庭", "产品"]
+    },
+    {
+      "text": "黄精怎么选？先别急着听夸张宣传。",
+      "duration": 3.0,
+      "keywords": ["黄精", "原料", "特写"]
+    }
+  ],
+  "segments": [
+    {
+      "role": "evidence",
+      "text": "先看原料来源、配料表和真实的产品信息。",
+      "duration": 4.0,
+      "keywords": ["黄精", "配料表", "检测"]
+    },
+    {
+      "role": "usage",
+      "text": "再看食用方法是否简单，能不能放进日常生活。",
+      "duration": 4.0,
+      "keywords": ["冲泡", "办公室", "生活"]
+    }
+  ],
+  "ctas": [
+    {
+      "text": "看清楚产品信息，再决定适不适合自己。",
+      "duration": 3.0,
+      "keywords": ["产品", "包装", "手持"]
+    },
+    {
+      "text": "需要的话，先从配料和食用方式了解。",
+      "duration": 3.0,
+      "keywords": ["配料表", "产品"]
+    }
+  ]
+}

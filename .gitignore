@@ -1,0 +1,33 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Build output
+build/
+dist/
+发布版/
+
+# Runtime/user data
+日志/*
+任务/*
+素材库/*
+config/asset_index.json
+
+# Local test output and machine-specific files
+测试数据/
+*.log
+
+# Vendored upstream checkout is not needed; dependency comes from PyPI
+vendor/
+
+# Keep empty runtime directories in the repository
+!日志/.gitkeep
+!任务/.gitkeep
+!素材库/.gitkeep
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
