@@ -18,7 +18,7 @@ mkdir "dist\剪映高产剪辑助手\文案" 2>nul
 mkdir "dist\剪映高产剪辑助手\任务" 2>nul
 mkdir "dist\剪映高产剪辑助手\日志" 2>nul
 
-tar.exe -a -c -f "dist\剪映高产剪辑助手_Windows_x64.zip" -C dist "剪映高产剪辑助手"
+tar.exe -a -c -f "dist\Jianying-High-Throughput-Assistant-Windows-x64.zip" -C dist "剪映高产剪辑助手"
 if errorlevel 1 exit /b 1
 
 echo Release created in dist.

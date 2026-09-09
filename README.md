@@ -32,7 +32,7 @@
 
 ### 普通用户（无需安装开发环境）
 
-在 GitHub 仓库右侧进入 **Releases**，下载 `剪映高产剪辑助手_Windows_x64.zip`。完整解压后双击 `剪映高产剪辑助手.exe`。不要只复制 EXE，也不要直接在压缩包中运行。最新发布页：<https://github.com/Tiroace/jianying-high-throughput-assistant/releases/latest>
+在 GitHub 仓库右侧进入 **Releases**，下载 `Jianying-High-Throughput-Assistant-Windows-x64.zip`。完整解压后双击 `剪映高产剪辑助手.exe`。不要只复制 EXE，也不要直接在压缩包中运行。最新发布页：<https://github.com/Tiroace/jianying-high-throughput-assistant/releases/latest>
 
 系统要求：Windows 10/11 64 位、剪映专业版。无需安装 Python、Git、FFmpeg 或本项目依赖。
 
